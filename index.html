@@ -200,7 +200,7 @@
       gap: 8px;
       cursor: pointer;
       text-decoration: none;
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
       white-space: nowrap;
     }
 
@@ -228,19 +228,6 @@
       transform: translateY(-1px);
     }
 
-    .btn-text {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      background: transparent;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-    }
-
-    .btn-text i {
-      font-size: 0.7rem;
-    }
-
     .contact-inline {
       display: flex;
       flex-wrap: wrap;
@@ -261,7 +248,7 @@
       color: var(--accent-alt);
     }
 
-    /* Photo card */
+    /* Photo styling */
     .photo-card {
       border-radius: 1.5rem;
       background: radial-gradient(circle at 10% 0, rgba(56, 189, 248, 0.15) 0, transparent 40%),
@@ -289,21 +276,12 @@
       justify-content: center;
     }
 
-    .photo-inner {
+    .photo-inner-img {
       width: 100%;
       height: 100%;
-      border-radius: inherit;
-      background: rgba(15, 23, 42, 0.97);
+      border-radius: 50%;
+      object-fit: cover;
       border: 1px solid rgba(15, 23, 42, 0.95);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.74rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      text-align: center;
-      padding: 10px;
     }
 
     .photo-note {
@@ -406,32 +384,6 @@
       white-space: nowrap;
     }
 
-    .chip.soft {
-      background: var(--accent-soft);
-      border-color: rgba(34, 197, 94, 0.5);
-      color: #bbf7d0;
-    }
-
-    .chip.sm {
-      font-size: 0.76rem;
-      padding: 3px 8px;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
-      margin-top: 4px;
-    }
-
-    .skills-subtitle {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
-
     .experience-item {
       padding: 9px 10px;
       border-radius: var(--radius-lg);
@@ -463,13 +415,6 @@
       margin-bottom: 2px;
     }
 
-    .experience-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 2px;
-    }
-
     .bullet-list {
       margin-top: 6px;
       font-size: 0.86rem;
@@ -481,11 +426,11 @@
       margin-bottom: 3px;
     }
 
+    /* Reports Grid */
     .reports-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
-      margin-top: 4px;
     }
 
     .report-card {
@@ -497,14 +442,13 @@
       display: flex;
       flex-direction: column;
       gap: 4px;
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+      transition: all 0.2s ease-in-out;
     }
 
     .report-card:hover {
       transform: translateY(-2px);
       border-color: rgba(56, 189, 248, 0.9);
       box-shadow: 0 14px 35px rgba(15, 23, 42, 0.9);
-      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.25) 0, rgba(15, 23, 42, 0.98) 50%);
     }
 
     .report-title {
@@ -527,34 +471,8 @@
       gap: 4px;
     }
 
-    .report-link i {
-      font-size: 0.7rem;
-    }
-
     .report-link:hover {
       text-decoration: underline;
-    }
-
-    .edu-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      font-size: 0.86rem;
-    }
-
-    .lang-row {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 6px;
-    }
-
-    .lang-item {
-      font-size: 0.8rem;
-      padding: 4px 9px;
-      border-radius: var(--radius-pill);
-      border: 1px dashed rgba(148, 163, 184, 0.6);
-      background: rgba(15, 23, 42, 0.95);
     }
 
     .footer-cta {
@@ -576,17 +494,6 @@
       max-width: 70%;
     }
 
-    .footer-cta-text strong {
-      color: #bbf7d0;
-      font-weight: 500;
-    }
-
-    .footer-cta-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
     .footer-note {
       margin-top: 14px;
       font-size: 0.74rem;
@@ -594,82 +501,29 @@
       text-align: right;
     }
 
+    /* Mobile */
     @media (max-width: 880px) {
-      .resume-shell {
-        padding: 20px 16px 18px;
-      }
-
-      .header-main {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .photo-card {
-        order: -1;
-      }
-
-      .layout-main {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .reports-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .footer-cta-text {
-        max-width: 100%;
-      }
-
-      body {
-        padding: 16px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .header-top {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-
-      .header-main {
-        gap: 18px;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .contact-inline {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .footer-cta {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .footer-cta-actions {
-        width: 100%;
-      }
-
-      .footer-cta-actions .btn {
-        width: 100%;
-        justify-content: center;
-      }
+      body { padding: 16px; }
+      .header-main { grid-template-columns: 1fr; }
+      .layout-main { grid-template-columns: 1fr; }
+      .reports-grid { grid-template-columns: 1fr; }
+      .footer-cta-text { max-width: 100%; }
     }
   </style>
 </head>
+
 <body>
   <div class="page">
     <div class="resume-shell">
       <div class="resume-inner">
+        
+        <!-- TOP HEADER -->
         <div class="header-top">
           <div class="logo-chip">
             <span class="dot"></span>
             <span>Meta Ads · Funnels · AI</span>
           </div>
+
           <div class="contact-inline">
             <span><i class="fa-solid fa-location-dot"></i>Córdoba, Argentina (Remote)</span>
             <span><i class="fa-solid fa-envelope"></i><a href="mailto:jonaticho@gmail.com" style="color:inherit;text-decoration:none;">jonaticho@gmail.com</a></span>
@@ -677,6 +531,7 @@
           </div>
         </div>
 
+        <!-- HERO SECTION -->
         <div class="header-main">
           <div class="hero-text">
             <div class="hero-subtitle">Meta Paid Ads Support Specialist</div>
@@ -689,375 +544,235 @@
             </div>
 
             <p class="hero-summary">
-              Media Buyer & Digital Marketing Specialist with <strong>5+ years of experience</strong> building
+              Media Buyer & Digital Marketing Specialist with <strong>5+ years of experience</strong> building 
               high-converting funnels and performance campaigns across the U.S., LATAM and Spain.
-              Specialized in Meta Ads, ClickFunnels (Classic & 2.0) and <strong>AI-driven workflows</strong> to
+              Specialized in Meta Ads, ClickFunnels (Classic & 2.0) and <strong>AI-driven workflows</strong> to 
               reduce acquisition costs and improve lead quality.
             </p>
 
             <div class="hero-actions">
-              <a
-                class="btn btn-primary"
-                href="https://wa.me/543517465758?text=Hi%20Jonathan%2C%20I%20found%20your%20resume%20and%20would%20like%20to%20talk%20about%20a%20Paid%20Media%20opportunity."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a class="btn btn-primary" href="https://wa.me/543517465758?text=Hi%20Jonathan%2C%20I%20found%20your%20resume..." target="_blank">
                 <i class="fa-brands fa-whatsapp"></i> Contact via WhatsApp
               </a>
 
-              <a
-                class="btn btn-ghost"
-                href="https://metalmarketing.online/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a class="btn btn-ghost" href="https://metalmarketing.online/" target="_blank">
                 <i class="fa-solid fa-globe"></i> Visit my website
               </a>
 
-              <a
-                class="btn btn-ghost"
-                href="https://www.linkedin.com/in/jonathan-alberto-pernia-ochoa-9bb34813b"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a class="btn btn-ghost" href="https://www.linkedin.com/in/jonathan-alberto-pernia-ochoa-9bb34813b" target="_blank">
                 <i class="fa-brands fa-linkedin"></i> LinkedIn profile
               </a>
             </div>
-
-            <button class="btn-text" type="button">
-              <i class="fa-solid fa-circle-info"></i> Open to remote roles in Paid Media, Funnels & AI-driven lead generation
-            </button>
           </div>
 
+          <!-- PHOTO SECTION -->
           <aside class="photo-card">
             <div class="photo-frame">
-              <!-- Replace the div below with your actual image:
-                   <img src="your-photo.jpg" alt="Photo of Jonathan Pernia" class="photo-inner-img" />
-              -->
-              <div class="photo-inner">
-                Your photo<br />goes here
-              </div>
+              <img src="jonathanprofile.jpg" alt="Photo of Jonathan Pernia" class="photo-inner-img" />
             </div>
-            <p class="photo-note">
-              Replace this placeholder with your favorite resume photo.
-              <span>You can use a 1:1 square image.</span>
-            </p>
+            <p class="photo-note">Updated profile photo loaded from repository.</p>
+
             <div class="photo-chip-row">
-              <div class="photo-chip">
-                <i class="fa-solid fa-language"></i>
-                Fluent in English & Spanish
-              </div>
-              <div class="photo-chip">
-                <i class="fa-solid fa-earth-americas"></i>
-                Remote · U.S. & EU time zones
-              </div>
+              <div class="photo-chip"><i class="fa-solid fa-language"></i>Fluent in English & Spanish</div>
+              <div class="photo-chip"><i class="fa-solid fa-earth-americas"></i>Remote · U.S. & EU time zones</div>
             </div>
           </aside>
         </div>
 
+        <!-- MAIN LAYOUT -->
         <div class="layout-main">
+
           <!-- LEFT COLUMN -->
           <div class="column">
-            <!-- About -->
+
             <section class="card">
               <h2>About</h2>
               <div class="divider"></div>
               <p>
-                I design and manage performance campaigns that <strong>connect paid traffic with high-converting funnels</strong>.
-                My work combines Meta Ads, ClickFunnels and automation tools like MAKE and Zapier to create
-                predictable lead generation systems for law firms, e-commerce and home services brands.
+                I design performance campaigns that <strong>connect paid traffic with high-converting funnels</strong>.
+                I combine Meta Ads, ClickFunnels, automation and reporting to build predictable lead generation
+                systems for law firms, e-commerce and service brands.
               </p>
             </section>
 
-            <!-- Skills -->
             <section class="card">
               <h2>Core Skills</h2>
               <div class="divider"></div>
-              <div class="skills-grid">
-                <div>
-                  <div class="skills-subtitle">Paid Media</div>
-                  <div class="list-inline">
-                    <span class="chip">Meta Ads (FB & IG)</span>
-                    <span class="chip">Google Ads</span>
-                    <span class="chip">Twitter/X Ads</span>
-                  </div>
-                </div>
-                <div>
-                  <div class="skills-subtitle">Funnels & CRO</div>
-                  <div class="list-inline">
-                    <span class="chip">ClickFunnels Classic & 2.0</span>
-                    <span class="chip">Lead Gen Funnels</span>
-                    <span class="chip">Conversion Rate Optimization</span>
-                  </div>
-                </div>
-                <div>
-                  <div class="skills-subtitle">Automation & Data</div>
-                  <div class="list-inline">
-                    <span class="chip">MAKE (Integromat)</span>
-                    <span class="chip">Zapier</span>
-                    <span class="chip">CRM Integrations</span>
-                    <span class="chip">UTM Tracking & KPI Reporting</span>
-                    <span class="chip">Google Tag Manager</span>
-                    <span class="chip">Google Analytics (GA4)</span>
-                  </div>
-                </div>
-                <div>
-                  <div class="skills-subtitle">Creative & Tools</div>
-                  <div class="list-inline">
-                    <span class="chip">Canva & Getty Images</span>
-                    <span class="chip">Short-form video ads</span>
-                    <span class="chip">AI content & reporting</span>
-                    <span class="chip">Teamwork · Slack · Zoom</span>
-                  </div>
-                </div>
+
+              <div class="list-inline">
+                <span class="chip">Meta Ads (FB & IG)</span>
+                <span class="chip">Google Ads</span>
+                <span class="chip">ClickFunnels Classic & 2.0</span>
+                <span class="chip">Lead Funnels</span>
+                <span class="chip">MAKE · Zapier</span>
+                <span class="chip">GA4 · GTM</span>
+                <span class="chip">CRM Integrations</span>
+                <span class="chip">Video & Static Creatives</span>
+                <span class="chip">Reporting · GitHub Pages</span>
+                <span class="chip">Slack · Teamwork</span>
               </div>
             </section>
 
-            <!-- Certifications -->
             <section class="card">
-              <h2>Certifications</h2>
+              <h2>Education & Certifications</h2>
               <div class="divider"></div>
+
+              <p><strong>Computer Science (Systems Analysis)</strong> – IUTAIRLA (2004 – 2008)</p>
+
+              <div class="divider"></div>
+
+              <p class="muted">Certifications:</p>
               <ul class="bullet-list">
-                <li>Make Foundation – Make (May 2025)</li>
-                <li>AI Applied to Digital Marketing – Coderhouse (May 2025)</li>
-                <li>Certificate of Proficiency Level 7 – Open English (Mar 2024)</li>
-                <li>Advanced English C1 – Open English</li>
-                <li>Lead Generation Course Facebook Ads – Platzi (Oct 2022)</li>
-                <li>Facebook Ads Advanced Course – Platzi (Nov 2022)</li>
-                <li>Google Ads Search Course – Platzi</li>
-                <li>Git and GitHub Professional – Platzi</li>
-                <li>Argentina Programa – Mumuki (Jun 2022)</li>
-                <li>Twitter Ads Course – Platzi</li>
+                <li>Make Foundation – Make (2025)</li>
+                <li>AI Applied to Digital Marketing – Coderhouse (2025)</li>
+                <li>English C1 – Open English (2024)</li>
+                <li>Facebook & Google Ads – Platzi</li>
+                <li>Twitter Ads – Platzi</li>
+                <li>Git & GitHub – Platzi</li>
               </ul>
             </section>
 
-            <!-- Education & Languages -->
-            <section class="card">
-              <h2>Education & Languages</h2>
-              <div class="divider"></div>
-              <div class="edu-row">
-                <div>
-                  <strong>Computer Science</strong> (Systems Analysis)
-                  <div class="muted">IUTAIRLA · Jan 2004 – Sep 2008</div>
-                </div>
-              </div>
-
-              <div style="margin-top:10px;">
-                <div class="skills-subtitle">Languages</div>
-                <div class="lang-row">
-                  <span class="lang-item">English – Advanced (C1)</span>
-                  <span class="lang-item">Spanish – Native</span>
-                </div>
-              </div>
-            </section>
           </div>
 
           <!-- RIGHT COLUMN -->
           <div class="column">
-            <!-- Experience -->
+
             <section class="card">
               <h2>Experience</h2>
               <div class="divider"></div>
 
-              <!-- LFMP -->
               <article class="experience-item">
                 <div class="experience-header">
                   <div>
                     <div class="experience-role">Meta Paid Ads Support Specialist</div>
-                    <div class="experience-company">Law Firm Marketing Pros (via Virtrify) · Remote</div>
+                    <div class="experience-company">Law Firm Marketing Pros (USA)</div>
                   </div>
                   <div class="experience-meta">Aug 2024 – Present</div>
                 </div>
-                <div class="experience-badges">
-                  <span class="chip sm soft">U.S. Law Firms</span>
-                  <span class="chip sm">Meta Ads · Funnels</span>
-                  <span class="chip sm">MAKE Automations</span>
-                </div>
                 <ul class="bullet-list">
-                  <li>Build full-funnel systems from scratch using ClickFunnels Classic & 2.0 for U.S. law firms.</li>
-                  <li>Manage Meta Ads campaigns end-to-end: setup, optimization, creative and audience testing.</li>
-                  <li>Design static and video creatives (Canva, Getty, YouTube Shorts, Vimeo) aligned with funnel strategy.</li>
-                  <li>Develop follow-up sequences with CRM integrations and automation tools (MAKE, Zapier).</li>
-                  <li>Track performance and KPIs using Google Sheets, Facebook Ads Manager and CallRail.</li>
-                  <li>Collaborate with global teams through Slack, Teamwork, Kumospace and Zoom.</li>
+                  <li>Build full funnels using ClickFunnels Classic & 2.0.</li>
+                  <li>Manage Meta Ads for multiple U.S. law firms.</li>
+                  <li>Connect funnels to CRM workflows using MAKE.</li>
+                  <li>Create static and video creatives for campaigns.</li>
+                  <li>Prepare KPI reports using HTML + GitHub Pages.</li>
                 </ul>
               </article>
 
-              <!-- JON-ADS -->
               <article class="experience-item">
                 <div class="experience-header">
                   <div>
-                    <div class="experience-role">Trafficker · Paid Media Freelancer</div>
-                    <div class="experience-company">JON-ADS Marketing · Remote</div>
+                    <div class="experience-role">Paid Media Specialist</div>
+                    <div class="experience-company">JON-ADS Marketing</div>
                   </div>
-                  <div class="experience-meta">Dec 2020 – Present</div>
-                </div>
-                <div class="experience-badges">
-                  <span class="chip sm soft">E-commerce & Services</span>
-                  <span class="chip sm">Meta & Google Ads</span>
-                  <span class="chip sm">Funnel Building</span>
+                  <div class="experience-meta">2020 – Present</div>
                 </div>
                 <ul class="bullet-list">
-                  <li>Launched Meta & Google Ads campaigns for e-commerce and service-based businesses across LATAM and Spain.</li>
-                  <li>Built landing pages and automated email funnels to improve lead quality and close rates.</li>
-                  <li>Delivered A/B testing, creative optimization and budget control to maximize ROAS.</li>
-                  <li>Advised clients on paid strategy, tracking and reporting, presenting results in clear HTML dashboards.</li>
+                  <li>Launched Meta & Google campaigns for LATAM & Spain.</li>
+                  <li>Built lead funnels and automated sequences.</li>
+                  <li>Improved ROAS through testing & optimization.</li>
                 </ul>
               </article>
 
-              <!-- Pyme Digital -->
               <article class="experience-item">
                 <div class="experience-header">
                   <div>
-                    <div class="experience-role">Media Buyer · Digital Trafficker</div>
-                    <div class="experience-company">Pyme Digital Agency · Remote</div>
+                    <div class="experience-role">Media Buyer</div>
+                    <div class="experience-company">Pyme Digital Agency</div>
                   </div>
-                  <div class="experience-meta">Dec 2020 – Sep 2024</div>
-                </div>
-                <div class="experience-badges">
-                  <span class="chip sm">LATAM & U.S. Accounts</span>
-                  <span class="chip sm">GTM & GA4</span>
+                  <div class="experience-meta">2020 – 2024</div>
                 </div>
                 <ul class="bullet-list">
-                  <li>Managed ad accounts in LATAM and the U.S. across multiple industries.</li>
-                  <li>Executed Google Ads and Meta Ads strategies focused on measurable business outcomes.</li>
-                  <li>Implemented tracking systems using Google Tag Manager and GA4 for accurate attribution.</li>
-                  <li>Improved ROAS through funnel optimization, testing and continuous iteration.</li>
+                  <li>Managed accounts in multiple countries.</li>
+                  <li>Executed Google & Meta Ads strategies.</li>
+                  <li>Set up tracking with GTM & Analytics.</li>
                 </ul>
               </article>
 
-              <!-- Skyeng -->
-              <article class="experience-item">
-                <div class="experience-header">
-                  <div>
-                    <div class="experience-role">Junior Scheduling Manager</div>
-                    <div class="experience-company">Skyeng · Remote</div>
-                  </div>
-                  <div class="experience-meta">Oct 2021 – Nov 2021</div>
-                </div>
-                <ul class="bullet-list">
-                  <li>Coordinated student and teacher schedules via CRM systems.</li>
-                  <li>Provided bilingual support and ensured service continuity across time zones.</li>
-                </ul>
-              </article>
-
-              <!-- CFContent -->
-              <article class="experience-item" style="margin-bottom:0;">
-                <div class="experience-header">
-                  <div>
-                    <div class="experience-role">Junior Media Buyer</div>
-                    <div class="experience-company">CFContent · Remote</div>
-                  </div>
-                  <div class="experience-meta">Dec 2019 – Mar 2020</div>
-                </div>
-                <ul class="bullet-list">
-                  <li>Assisted in Meta Ads optimization and day-to-day campaign management.</li>
-                  <li>Conducted A/B testing and performance analysis to support senior strategists.</li>
-                </ul>
-              </article>
             </section>
 
-            <!-- HTML Reports -->
             <section class="card">
-              <h2>Interactive HTML Reports</h2>
+              <h2>HTML Reports</h2>
               <div class="divider"></div>
-              <p class="muted">
-                I create <strong>client-friendly, HTML-based performance reports</strong> hosted on GitHub Pages.
-                These dashboards summarize key metrics and insights so non-technical stakeholders can easily
-                understand campaign results.
-              </p>
+
+              <p class="muted">GitHub-hosted dashboards with campaign metrics:</p>
 
               <div class="reports-grid">
                 <div class="report-card">
-                  <div class="report-title">Wakeboard Argentina – November 2025</div>
-                  <div class="report-meta">Meta Ads overview · E-commerce · AR</div>
-                  <a class="report-link" href="https://jonaticho18.github.io/Reporte-Wakeboard-Argentina-Noviembre2025/" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> View report
+                  <div class="report-title">Wakeboard Argentina – Nov 2025</div>
+                  <a class="report-link" href="https://jonaticho18.github.io/Reporte-Wakeboard-Argentina-Noviembre2025/" target="_blank">
+                    View report →
                   </a>
                 </div>
 
                 <div class="report-card">
-                  <div class="report-title">ACC – Facebook Ads November</div>
-                  <div class="report-meta">Lead generation · Industrial niche</div>
-                  <a class="report-link" href="https://jonaticho18.github.io/Facebook-Ads-ACC-Reporte-de-Noviembre/" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> View report
+                  <div class="report-title">ACC – FB Ads Report</div>
+                  <a class="report-link" href="https://jonaticho18.github.io/Facebook-Ads-ACC-Reporte-de-Noviembre/" target="_blank">
+                    View report →
                   </a>
                 </div>
 
                 <div class="report-card">
                   <div class="report-title">Club de Héroes Podcast</div>
-                  <div class="report-meta">Engagement & content performance</div>
-                  <a class="report-link" href="https://jonaticho18.github.io/FB-Report-Club-de-Heroes-Podcast/" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> View report
+                  <a class="report-link" href="https://jonaticho18.github.io/FB-Report-Club-de-Heroes-Podcast/" target="_blank">
+                    View report →
                   </a>
                 </div>
 
                 <div class="report-card">
-                  <div class="report-title">Volv&eacute; a Vos – Campaign Report</div>
-                  <div class="report-meta">Meta Ads · Lead generation</div>
-                  <a class="report-link" href="https://jonaticho18.github.io/Facebook-Report-Volv-a-Vos/" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> View report
+                  <div class="report-title">Volvé a Vos – Report</div>
+                  <a class="report-link" href="https://jonaticho18.github.io/Facebook-Report-Volv-a-Vos/" target="_blank">
+                    View report →
                   </a>
                 </div>
 
                 <div class="report-card">
-                  <div class="report-title">Reels Performance – Facebook Ads</div>
-                  <div class="report-meta">Short-form video · Creative testing</div>
-                  <a class="report-link" href="https://jonaticho18.github.io/Facebook-Ads-Reels-Performance/" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> View report
+                  <div class="report-title">Reels Performance</div>
+                  <a class="report-link" href="https://jonaticho18.github.io/Facebook-Ads-Reels-Performance/" target="_blank">
+                    View report →
                   </a>
                 </div>
 
                 <div class="report-card">
-                  <div class="report-title">Architectural Window Film – Córdoba</div>
-                  <div class="report-meta">Local services · Lead generation</div>
-                  <a class="report-link" href="https://jonaticho18.github.io/Polarizados-de-Arquitectura-C-rdoba/" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> View report
+                  <div class="report-title">Architectural Window Film</div>
+                  <a class="report-link" href="https://jonaticho18.github.io/Polarizados-de-Arquitectura-C-rdoba/" target="_blank">
+                    View report →
                   </a>
                 </div>
 
                 <div class="report-card">
-                  <div class="report-title">Case Study – Funnels & Services</div>
-                  <div class="report-meta">Funnel structure · Services breakdown</div>
-                  <a class="report-link" href="https://jonaticho18.github.io/Case-of-Study-1/index.html#services" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> View report
+                  <div class="report-title">Case Study – Funnels</div>
+                  <a class="report-link" href="https://jonaticho18.github.io/Case-of-Study-1/index.html#services" target="_blank">
+                    View report →
                   </a>
                 </div>
               </div>
+
             </section>
 
-            <!-- CTA -->
             <section class="footer-cta">
               <div class="footer-cta-text">
-                <strong>Let’s build your next funnel or lead gen system.</strong>
-                I can help you launch or optimize Meta Ads campaigns, connect them to high-converting funnels
-                and add AI-powered automations so your team spends more time closing and less time chasing leads.
+                <strong>Let’s build your next lead generation system.</strong>
+                I specialize in Meta Ads, Funnels and Automations designed to reduce CPL and increase lead quality.
               </div>
-              <div class="footer-cta-actions">
-                <a
-                  class="btn btn-primary"
-                  href="https://wa.me/543517465758?text=Hi%20Jonathan%2C%20I%20found%20your%20resume%20and%20would%20like%20to%20talk%20about%20a%20Paid%20Media%20opportunity."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i class="fa-brands fa-whatsapp"></i> Message on WhatsApp
-                </a>
-                <a
-                  class="btn btn-ghost"
-                  href="mailto:jonaticho@gmail.com?subject=Paid%20Media%20Opportunity"
-                >
-                  <i class="fa-solid fa-envelope"></i> Email me
-                </a>
-              </div>
+
+              <a class="btn btn-primary"
+                 href="https://wa.me/543517465758?text=Hi%20Jonathan%2C%20I'd%20like%20to%20talk%20about%20a%20Paid%20Media%20role."
+                 target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Message on WhatsApp
+              </a>
             </section>
 
             <div class="footer-note">
-              Last updated: August 2025 · Hosted on GitHub Pages
+              Last updated: 2025 – Hosted on GitHub Pages
             </div>
+
           </div>
+
         </div>
+
       </div>
     </div>
   </div>
 </body>
 </html>
+
